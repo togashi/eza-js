@@ -1,0 +1,21 @@
+{
+  "name": "eza-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "eza.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "eza": "./eza.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.20.0",
+    "moment": "^2.24.0",
+    "node-notifier": "^5.4.0",
+    "winattr": "^3.0.0"
+  }
+}

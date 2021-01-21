@@ -18,7 +18,7 @@ Vid=
 FolderType=Generic
 `
 
-commander.version('0.2')
+commander.version('0.3')
     .description(`move files or directories to the archive directory "${ARCHIVE_DIR_NAME}\\${ARCHIVE_DIR_SUFFIX}" at same path.`)
     .usage('FILES...')
     .option('-f, --folder', 'prepare archive folder')
@@ -65,7 +65,7 @@ async function makeSureArchiveBaseDir(path) {
     const desktopIniPath = path + '\\desktop.ini'
     try {
         await fsp.stat(desktopIniPath)
-        return true
+        if (!commander.folder) return true
     } catch (err) {
         if (!commander.folder && err.code !== 'ENOENT') {
             console.log('DEBUG', 'fsp.stat failed.', err)

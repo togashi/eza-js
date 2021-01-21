@@ -4,7 +4,7 @@ const fs = require('fs')
 const util = require('util')
 const commander = require('commander')
 const winattr = require('winattr')
-const moment = require('moment')
+const dayjs = require('dayjs')
 const notifier = require('node-notifier')
 
 const ARCHIVE_DIR_NAME = process.env.EZA_ARCHIVE_DIR_NAME || 'archive'
@@ -45,7 +45,7 @@ function notifyError(message) {
 function getArchiveDir(path) {
     const pathElms = path.split(/[/\\]/)
     let filename = pathElms.pop()
-    pathElms.push(ARCHIVE_DIR_NAME, moment().format(ARCHIVE_DIR_SUFFIX))
+    pathElms.push(ARCHIVE_DIR_NAME, dayjs().format(ARCHIVE_DIR_SUFFIX))
     const ret = pathElms.join('\\')
     return [ret, `${ret}\\${filename}`]
 }

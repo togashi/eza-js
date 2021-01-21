@@ -15,7 +15,7 @@
   "dependencies": {
     "commander": "^2.20.0",
     "dayjs": "^1.10.3",
-    "node-notifier": "^5.4.0",
+    "node-notifier": "^8.0.1",
     "winattr": "^3.0.0"
   }
 }
